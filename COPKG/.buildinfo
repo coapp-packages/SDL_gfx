@@ -1,0 +1,74 @@
+#product-info  
+{    
+	product-name: "SDL_gfx";    
+	version: "2.0.23";    
+	original-source-location: "https://sdlgfx.svn.sourceforge.net/svnroot/sdlgfx";    
+	original-source-website: "http://www.ferzkopp.net";    
+	license: "LGPL";    
+	packager: "Andreas Schiffler <aschiffler@ferzkopp.net>";
+}
+
+x86 {    
+
+compiler: vc10-x86;
+         
+targets: {
+	// main library
+	"Win32\Debug\SDL_gfx.dll",
+	"Win32\Debug\SDL_gfx.lib",
+
+	// tests
+	"Test\TestShrink\Win32\Debug\TestShrink.exe",
+	"Test\TestRotozoom\Win32\Debug\TestRotozoom.exe",
+	"Test\TestImageFilter\Win32\Debug\TestImageFilter.exe",
+	"Test\TestGfxTexture\Win32\Debug\TestGfxTexture.exe",
+	"Test\TestGfxBlit\Win32\Debug\TestGfxBlit.exe",
+	"Test\TestGfxPrimitives\Win32\Debug\TestGfxPrimitives.exe",
+	"Test\TestFramerate\Win32\Debug\TestFramerate.exe",
+	"Test\TestFonts\Win32\Debug\TestFonts.exe",
+	"Test\TestABGR\Win32\Debug\TestABGR.exe",
+	"Test\LaplaceRelaxation\Win32\Debug\LaplaceRelaxation.exe",
+
+	// test assets
+	"Test\texture_alpha.bmp",
+	"Test\texture.bmp",
+	"Test\sample24-box.bmp",
+	"Test\sample24.bmp",
+	"Test\sample8-box.bmp",
+	"Test\sample8.bmp",
+
+	// fonts
+	"Fonts\10x20.fnt",
+	"Fonts\5x7.fnt",
+	"Fonts\5x8.fnt",
+	"Fonts\6x10.fnt",
+	"Fonts\6x12.fnt",
+	"Fonts\6x13.fnt",
+	"Fonts\6x13B.fnt",
+	"Fonts\6x13O.fnt",
+	"Fonts\6x9.fnt",
+	"Fonts\7x13.fnt",
+	"Fonts\7x13B.fnt",
+	"Fonts\7x13O.fnt",
+	"Fonts\7x14.fnt",
+	"Fonts\7x14B.fnt",
+	"Fonts\8x13.fnt",
+	"Fonts\8x13B.fnt",
+	"Fonts\8x13O.fnt",
+	"Fonts\9x15.fnt",
+	"Fonts\9x15B.fnt",
+	"Fonts\9x18.fnt",
+	"Fonts\9x18B.fnt",
+
+};
+
+build-command:@"
+	msbuild SDL_gfx.sln /p:Platform=Win32 /p:Configuration=Debug
+";
+
+clean-command:@"
+	call COPKG\clean.cmd
+";
+
+};
+
