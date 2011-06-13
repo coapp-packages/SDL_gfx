@@ -12,6 +12,8 @@ x86 {
 
 compiler: vc10-x86;
          
+uses: bld-cfg="..\SDL" ;
+
 targets: {
 	// main library
 	"Win32\Debug\SDL_gfx.dll",
