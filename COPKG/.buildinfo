@@ -12,7 +12,7 @@ x86 {
 
 compiler: vc10-x86;
          
-uses: bld-cfg="..\SDL" ;
+uses: "..\SDL" ;
 
 targets: {
 	// main library
